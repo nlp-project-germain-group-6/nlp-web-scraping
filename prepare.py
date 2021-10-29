@@ -105,6 +105,21 @@ def remove_stopwords(string, extra_words = [], exclude_words = []):
     
     return new_string
 
+def remove_urls(text):
+    '''
+    This function removes urls from the string 
+    '''
+    res = []
+    for i in text.strip().split():
+        if not re.search(r"(https?)", i):  
+            res.append(re.sub(r"[^A-Za-z\.]", "", i).replace(".", " "))   
+    return " ".join(map(str.strip, res))
+
+def remove_unicode_text(words):
+    words_clean = re.sub(r'\<[^>]*\>', '', words)
+    
+    return words_clean
+
 
 ################## ~~~~~~ Mother Prep Function ~~~~~~ ##################
 
@@ -161,6 +176,22 @@ def drop_unneeded_data(df):
     df = df.reset_index().drop(columns = 'index')
     return df
 
+def remove_stopwords(content):
+    '''
+    This function removes English language stop words from our texts.
+    '''
+    stopword_list = stopwords.words('english')
+
+    stopword_list.remove('no')
+    stopword_list.remove('not')
+    
+    words = content.split()
+    filtered_words = [w for w in words if w not in stopword_list]
+    
+    content_without_stopwords = ' '.join(filtered_words)
+    
+    print(content_without_stopwords)
+    
 
 def split_data(df):
     '''
