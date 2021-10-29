@@ -12,7 +12,7 @@ from typing import Dict, List, Optional, Union, cast
 import requests
 
 from env import github_token, github_username
-
+from repos import repolist
 # TODO: Make a github personal access token.
 #     1. Go here and generate a personal access token https://github.com/settings/tokens
 #        You do _not_ need select any scopes, i.e. leave all the checkboxes unchecked
@@ -20,11 +20,6 @@ from env import github_token, github_username
 # TODO: Add your github username to your env.py file under the variable `github_username`
 # TODO: Add more repositories to the `REPOS` list below.
 
-REPOS = [
-    "gocodeup/codeup-setup-script",
-    "gocodeup/movies-application",
-    "torvalds/linux",
-]
 
 headers = {"Authorization": f"token {github_token}", "User-Agent": github_username}
 
@@ -104,9 +99,16 @@ def scrape_github_data() -> List[Dict[str, str]]:
     """
     Loop through all of the repos and process them. Returns the processed data.
     """
-    return [process_repo(repo) for repo in REPOS]
+    return [process_repo(repo) for repo in repolist]
 
 
-if __name__ == "__main__":
-    data = scrape_github_data()
-    json.dump(data, open("data.json", "w"), indent=1)
+data = scrape_github_data()
+
+with open('data2.json', 'w') as json_file:
+    json.dump(data, json_file)
+
+  
+    
+    
+    
+    
