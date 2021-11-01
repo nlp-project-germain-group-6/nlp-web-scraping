@@ -182,8 +182,8 @@ def drop_unneeded_data(df):
     
     for i in range(len(df)):
         df.readme_contents[i] = re.sub(r'\<[^>]*\>', '', df.readme_contents[i])
-        for i in range(len(df)):
-            res = []
+    for i in range(len(df)):
+        res = []
         for j in df.readme_contents[i].strip().split():
             if not re.search(r"(https?)", j):  
                 res.append(re.sub(r"[^A-Za-z\.]", "", j).replace(".", " "))   
