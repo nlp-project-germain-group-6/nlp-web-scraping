@@ -179,7 +179,9 @@ def drop_unneeded_data(df):
     Drops any rows that are chinese
     Drops all rows that aren't in the top 4 languages
     '''
+    
     for i in range(len(df)):
+        df['contents'] = df.readme_contents  
         df.contents[i] = re.sub(r'\<[^>]*\>', '', df.contents[i])
         for i in range(len(df)):
             res = []
