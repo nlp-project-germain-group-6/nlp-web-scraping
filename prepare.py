@@ -181,16 +181,15 @@ def drop_unneeded_data(df):
     '''
     
     for i in range(len(df)):
-        df['contents'] = df.readme_contents  
-        df.contents[i] = re.sub(r'\<[^>]*\>', '', df.contents[i])
+        df.readme_contents[i] = re.sub(r'\<[^>]*\>', '', df.readme_contents[i])
         for i in range(len(df)):
             res = []
-        for j in df.contents[i].strip().split():
+        for j in df.readme_contents[i].strip().split():
             if not re.search(r"(https?)", j):  
                 res.append(re.sub(r"[^A-Za-z\.]", "", j).replace(".", " "))   
-                df.contents[i] = " ".join(map(str.strip, res))
+                df.readme_contents[i] = " ".join(map(str.strip, res))
     df = df.dropna()
-    df = df[df.readme_contents.apply(is_chinese) !=True]
+    df = df[df.readme_contents.apply(is_foreign) !=True]
     df = get_top_4_languages(df)
     df = df.reset_index().drop(columns = 'index')
            
