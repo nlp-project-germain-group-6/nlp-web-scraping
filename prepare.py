@@ -115,10 +115,12 @@ def remove_urls(text):
             res.append(re.sub(r"[^A-Za-z\.]", "", i).replace(".", " "))   
     return " ".join(map(str.strip, res))
 
-def remove_unicode_text(words):
-    words_clean = re.sub(r'\<[^>]*\>', '', words)
+def remove_unicode_text(df):
+    for row in df.readme_contents:
     
-    return words_clean
+        row = re.sub(r'\<[^>]*\>', '', row)
+    
+    return df
 
 
 ################## ~~~~~~ Mother Prep Function ~~~~~~ ##################
@@ -150,7 +152,14 @@ def is_chinese(texts):
     if re.search("[\u4e00-\u9FFF]", texts):
             return True
 
-
+def is_foreign(texts):
+    '''
+    This function takes in a dataframe and return true if the scanned text is in Chinese, Korean, or Japanese.
+    '''
+    if re.search("[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uff66-\uff9f\u3131-\uD79D]", texts):
+            return True
+        
+        
 
 def get_top_4_languages(df):
     '''
@@ -176,22 +185,6 @@ def drop_unneeded_data(df):
     df = df.reset_index().drop(columns = 'index')
     return df
 
-def remove_stopwords(content):
-    '''
-    This function removes English language stop words from our texts.
-    '''
-    stopword_list = stopwords.words('english')
-
-    stopword_list.remove('no')
-    stopword_list.remove('not')
-    
-    words = content.split()
-    filtered_words = [w for w in words if w not in stopword_list]
-    
-    content_without_stopwords = ' '.join(filtered_words)
-    
-    print(content_without_stopwords)
-    
 
 def split_data(df):
     '''
