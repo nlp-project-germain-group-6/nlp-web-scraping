@@ -179,10 +179,19 @@ def drop_unneeded_data(df):
     Drops any rows that are chinese
     Drops all rows that aren't in the top 4 languages
     '''
+    for i in range(len(df)):
+        df.contents[i] = re.sub(r'\<[^>]*\>', '', df.contents[i])
+        for i in range(len(df)):
+            res = []
+        for j in df.contents[i].strip().split():
+            if not re.search(r"(https?)", j):  
+                res.append(re.sub(r"[^A-Za-z\.]", "", j).replace(".", " "))   
+                df.contents[i] = " ".join(map(str.strip, res))
     df = df.dropna()
     df = df[df.readme_contents.apply(is_chinese) !=True]
     df = get_top_4_languages(df)
     df = df.reset_index().drop(columns = 'index')
+           
     return df
 
 
