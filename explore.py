@@ -12,6 +12,15 @@ import seaborn as sns
 from wordcloud import WordCloud
 
 
+
+def idf(word):
+    '''
+    This function calculated the IDF value for each word in a document.
+    '''
+    n_occurences = sum([1 for doc in values_stemmed.values() if word in doc])
+    return len(values_stemmed) / n_occurences
+
+
 def get_word_counts_series(df, column):
     '''
     This function takes in a dataframe
