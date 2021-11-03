@@ -1,8 +1,8 @@
-# Using Natural Language to Predict Programming Languange
+## Using Natural Language Processing to Predict Programming Languange
 
-## Webscraping and Natural Language Processing Project 
+### Webscraping and Natural Language Processing Project 
 
-### Presented by Chris Everts, Malachi Hale and Randy French
+#### Presented by Chris Everts, Malachi Hale and Randy French
 
 
 ### Table of Contents
@@ -50,8 +50,8 @@ VII.  [Project Reproduction         ](#vii-project-reproduction)
 
 #### 2. Deliverables
 
-- A well-documented Jupyter notebook that contains a report of your analysis, and link to that notebook. 
-- A slideshow suitable for a general audience that summarizes your findings. Include well-labeled visualizations in your slides. 
+- A well-documented Jupyter notebook that contains a report of our analysis, and link to that notebook. 
+- A slideshow suitable for a general audience that summarizes our findings. Include well-labeled visualizations in your slides. 
 - A video of your 5-minute presentation. Each team member should present a portion of the presentation.
 - README file that details the project specs, planning, key findings, and steps to reproduce the project.
 
@@ -66,13 +66,13 @@ VII.  [Project Reproduction         ](#vii-project-reproduction)
 
 #### 2. Key findings:
 
-- We will demonstrate that we can use the Random Forest model on the lemmatized text data to predict with an accuracy greater than baseline the programming language that corresponds to each READme file. 
+- We will demonstrate that we can use the Random Forest model on the lemmatized text data to predict with an accuracy greater than baseline the programming language that corresponds to each README file. 
 
 #### 3. Recommendations:
 
-- We were able to create a successful model that predicted better than baseline which programming language a READme file was likely to accompany. There are, however, some ways that we may be able to fortify our model.
+- We were able to create a successful model that predicted better than baseline which programming language a README file was likely to accompany. There are, however, some ways that we may be able to fortify our model.
 
-- In this project, we began with an initial dataset of 200 READme files. To make our model even more robust in the future, we may explore using a larger sample of READme files. 
+- In this project, we began with an initial dataset of 200 README files. To make our model even more robust in the future, we may explore using a larger sample of README files. 
 
 - Furthermore, because natural language differs so signficantly by geographic location, it may be useful to build separate classification models based on the repository creator's location. 
 
@@ -82,7 +82,7 @@ VII.  [Project Reproduction         ](#vii-project-reproduction)
 
 #### 1. Questions
 
-- What are the most common words in READme files?
+- What are the most common words in README files?
 - Does the length of the README vary by programming language?
 - Do different programming languages use a different number of unique words?
 - What does the distribution of IDFs look like for the most common words?
@@ -137,13 +137,16 @@ What does the distribution of IDFs look like for the most common words?
                 precision    recall  f1-score   support
 
    JavaScript       0.67      0.40      0.50         5
-Jupyter Notebook       0.80      0.80      0.80        10
-             PHP       0.62      1.00      0.76         8
+   Jupyter Notebook       0.80      0.80      0.80        10
+                PHP       0.62      1.00      0.76         8
           Python       0.00      0.00      0.00         5
 
    accuracy                           0.64        28
   macro avg       0.52      0.55      0.52        28
 weighted avg       0.58      0.64      0.59        28
+
+precision    recall  f1-score   support
+
 
 
 ### IV. Data Context
@@ -244,5 +247,5 @@ To reproduce our project:
 - Run the 'Final_Notebook.ipynb' file.
 
 
-[[Return to Top]](#Using-Natural-Language-to-Predict-Programming-Languange)
+[[Return to Top]](#Using-Natural-Language-Processing-to-Predict-Programming-Languange)
 
