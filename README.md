@@ -45,10 +45,8 @@ VII.  [Project Reproduction         ](#vii-project-reproduction)
 
 #### 1. Description
 
-# The primary focus of the project was to build a model that can predict what programming language a repository is, given the text of the README file.
+### The primary focus of the project was to build a model that can predict what programming language a repository is, given the text of the README file.
 
-## Webscraping and Natural Language Processing Project 
-### Presented by Chris Everts, Malachi Hale and Randy French
 
 #### 2. Deliverables
 
@@ -131,21 +129,21 @@ What does the distribution of IDFs look like for the most common words?
 - Our of our models except Random Forest on lemmatized bigrams (Random_forest_tfidf2) and K Neartest Neighbors lemmatized bigrams (KNN_bigrams_tfidf2) performed with a higher accuracy than baseline on the validate dataset. Thefore, all of our models except the two mentioned are valid.
 - Our best performing model on the validate dataset was the Random Forest on lemmatized text Random_forest_tfidf_lemmatized, with a score of nearly 0.85 on the validate dataset.
 
-## Our best performing model predicted the test dataset languages with 64% accuracy, outperforming baseline by 28% on the test dataset.
+#### Our best performing model predicted the test dataset languages with 64% accuracy, outperforming baseline by 28% on the test dataset.
 
- ============== Random Forest Lemmatized ================           
-RandomForestClassifier()
+   ============== Random Forest Lemmatized ================           
+    RandomForestClassifier()
               Test Scores
-                  precision    recall  f1-score   support
+                precision    recall  f1-score   support
 
-      JavaScript       0.67      0.40      0.50         5
+   JavaScript       0.67      0.40      0.50         5
 Jupyter Notebook       0.80      0.80      0.80        10
              PHP       0.62      1.00      0.76         8
           Python       0.00      0.00      0.00         5
 
-        accuracy                           0.64        28
-       macro avg       0.52      0.55      0.52        28
-    weighted avg       0.58      0.64      0.59        28
+   accuracy                           0.64        28
+  macro avg       0.52      0.55      0.52        28
+weighted avg       0.58      0.64      0.59        28
 
 
 ### IV. Data Context
@@ -153,7 +151,7 @@ Jupyter Notebook       0.80      0.80      0.80        10
 
 #### 1. Data Dictionary
 
-Following acquisition and preparation of the initial SQL database, the DataFrames used in this project contain the following variables. Contained values are defined along with their respective data types.
+Following acquisition and preparation of the initial data acquitions, the contained values are defined along with their respective data types.
 
 | Feature         | Datatype   | Description                                                                                                                                                                                              |
 |:----------------|:-----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -225,7 +223,7 @@ Following acquisition and preparation of the initial SQL database, the DataFrame
 ### VI. Modules
 ---
 
-The created modules used in this project below contain full comments an docstrings to better understand their operation.See project reproduction for more detail.
+The created modules used in this project below contain full comments and docstrings. See 'project reproduction' for the steps.
 
 - acquire.py
 - explore.py
