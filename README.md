@@ -90,8 +90,6 @@ VII.  [Project Reproduction         ](#vii-project-reproduction)
 
 We will use statistical testing (T-test) to determine if the average length of the README file for each language is significantly different than the length of the README file for other languages.
 
-* As is customary, for the following statistical tests, our alpha value will be 0.05.
-
 What are the most common words in README files?
 - Overall, we found that words 'custom', 'data', 'use', and 'model' were the most frequently used words in all our README files.
 - The most frequently used words differ when we calculate word frequency separately by language. However, the words 'customer' and 'data' tended to appear frequently in the README files for every language.
@@ -99,26 +97,25 @@ What are the most common words in README files?
 
 Does the length of the README file differ by programming language?
 - Using independent t-tests to compare the README lengths of one language to another, we found:
-- None of the languages have on average significantly different mean README lengths from one another.
+    - None of the languages have on average significantly different mean README lengths from one another.
 - Using a one-sample t-test to compare each language's README length to the population mean, we found:
-- PHP is the only language that differs significantly in the length of its README files than the overall population.
+    - PHP is the only language that differs significantly in the length of its README files than the overall population.
 
 Do different programming languages use a different number of unique words?
 - Using independent t-test to compare the amount of unique words in the README files of different programming languages, we found:
- - Of all languages, only PHP and Jupyter Notebook differ significantly from each other in the amount of unique words used in README files.
+    - Of all languages, only PHP and Jupyter Notebook differ significantly from each other in the amount of unique words used in README files.
  - Using a one-sample t-test to compare each language's README unique words to the population mean, we found:
- - Only PHP different signficantly from the overall population in its amount of unique words used.
+     - Only PHP varied signficantly from the overall population in its amount of unique words used.
 
 What does the distribution of IDFs look like for the most common words?
 - Using our top 20 most common words calculated in Question 1, we calculated the IDF values for each of our top 20 most common words.
 - The words in the top 20 with the highest IDF value were "png", "churn", "segment", and "magneto".
 
 
-
 ### 2. Findings
 #### Our findings are:
 
-- We constructed a model that used the natural language of the README file of each repositroy to predict the programming language of that repository.
+- We constructed a model that used the natural language of the README file of each repository to predict the programming language of that repository.
 
 - We used our most frequent language value, "Jupyter Notebook", as our baseline. This gave us a baseline accuracy of 0.36.
 - We ran the models Naive Bayes, SVC, Decision Tree, Random Forest, K Nearest Neighbors, and Logistic Regression on:
@@ -126,28 +123,25 @@ What does the distribution of IDFs look like for the most common words?
     - stemmed text data,
     - cleaned data, and
     - lemmatized bigrams.
-- Our of our models except Random Forest on lemmatized bigrams (Random_forest_tfidf2) and K Neartest Neighbors lemmatized bigrams (KNN_bigrams_tfidf2) performed with a higher accuracy than baseline on the validate dataset. Thefore, all of our models except the two mentioned are valid.
+- All of our models except Random Forest on lemmatized bigrams (Random_forest_tfidf2) and K Neartest Neighbors lemmatized bigrams (KNN_bigrams_tfidf2) performed with a higher accuracy than baseline on the validate dataset. Thefore, all of our models except the two mentioned are valid.
 - Our best performing model on the validate dataset was the Random Forest on lemmatized text Random_forest_tfidf_lemmatized, with a score of nearly 0.85 on the validate dataset.
 
 #### Our best performing model predicted the test dataset languages with 64% accuracy, outperforming baseline by 28% on the test dataset.
 
-   ============== Random Forest Lemmatized ================           
-    RandomForestClassifier()
-              Test Scores
-                precision    recall  f1-score   support
+      ================ Random Forest Lemmatized =====================
+      RandomForestClassifer()
+      ------------- Test Scores ----------------- 
 
-   JavaScript       0.67      0.40      0.50         5
-   Jupyter Notebook       0.80      0.80      0.80        10
-                PHP       0.62      1.00      0.76         8
+                  precision    recall  f1-score   support
+
+      JavaScript       0.67      0.40      0.50         5
+Jupyter Notebook       0.75      0.90      0.82        10
+             PHP       0.67      1.00      0.80         8
           Python       0.00      0.00      0.00         5
 
-   accuracy                           0.64        28
-  macro avg       0.52      0.55      0.52        28
-weighted avg       0.58      0.64      0.59        28
-
-precision    recall  f1-score   support
-
-
+        accuracy                           0.68        28
+       macro avg       0.52      0.57      0.53        28
+    weighted avg       0.58      0.68      0.61        28
 
 ### IV. Data Context
 ---
@@ -190,7 +184,6 @@ Following acquisition and preparation of the initial data acquitions, the contai
 
 - [x] Address missing or inappropriate values
 - [x] Consider and create new features as needed
-
 
 #### 4. Data Exploration
 ✓ _Plan_ ➜ ✓ _Acquire_ ➜ ✓ _Prepare_ ➜ 🟢 **Explore** ➜ ☐ _Model_ ➜ ☐ _Deliver_
@@ -242,9 +235,13 @@ To reproduce our project:
 
 - Read this README.md file.
 
-- Download the 'acquire.py', 'explore.py', 'prepare.py', 'model.py' and 'Final_Notebook.ipynb' files.
+- Download and import the 'acquire.py', 'explore.py', 'prepare.py', 'model.py' and 'Final_Notebook.ipynb' files in our repository.
+
+- Import all the other libraries listed in the 'Import Libraries' section. 
 
 - Run the 'Final_Notebook.ipynb' file.
+
+When using any function housed in the created modules above, ensure full reading of comments and docstrings to understand its proper use and passed arguments or parameters.
 
 
 [[Return to Top]](#Using-Natural-Language-Processing-to-Predict-Programming-Languange)
