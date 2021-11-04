@@ -135,7 +135,7 @@ What does the distribution of IDFs look like for the most common words?
                   precision    recall  f1-score   support
 
       JavaScript       0.67      0.40      0.50         5
-Jupyter Notebook       0.75      0.90      0.82        10
+Jupyter Notebook       0.75      0.90      0.82        10     
              PHP       0.67      1.00      0.80         8
           Python       0.00      0.00      0.00         5
 
