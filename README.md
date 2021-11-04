@@ -116,19 +116,22 @@ What does the distribution of IDFs look like for the most common words?
 #### Our findings are:
 
 - We constructed a model that used the natural language of the README file of each repository to predict the programming language of that repository.
-
-- We used our most frequent language value, "Jupyter Notebook", as our baseline. This gave us a baseline accuracy of 0.36.
+- We used our most frequent language value, "Jupyter Notebook", as our baseline. This gave us a baseline accuracy of **0.36.**
 - We ran the models Naive Bayes, SVC, Decision Tree, Random Forest, K Nearest Neighbors, and Logistic Regression on:
     - lemmatized text data,
     - stemmed text data,
     - cleaned data, and
     - lemmatized bigrams.
 - All of our models except Random Forest on lemmatized bigrams (Random_forest_tfidf2) and K Neartest Neighbors lemmatized bigrams (KNN_bigrams_tfidf2) performed with a higher accuracy than baseline on the validate dataset. Thefore, all of our models except the two mentioned are valid.
-- Our best performing model on the validate dataset was the Random Forest on lemmatized text Random_forest_tfidf_lemmatized, with a score of nearly 0.85 on the validate dataset.
+- Our best performing model on the validate dataset was the Random Forest on lemmatized text Random_forest_tfidf_lemmatized, with a score of nearly **0.85** on the validate dataset.
 
 #### Our best performing model predicted the test dataset languages with 64% accuracy, outperforming baseline by 28% on the test dataset.
 
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> dffb8dc5cb76e2a3bd4df2dad1e2f9e201830466
 ### IV. Data Context
 ---
 
@@ -138,12 +141,12 @@ Following acquisition and preparation of the initial data acquitions, the contai
 
 | Feature         | Datatype   | Description                                                                                                                                                                                              |
 |:----------------|:-----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| repo            | object     | End of the URL string of the location of the repository on GitHub. The GitHub user followed by the name of the repostiory.                                                                               |
+| repo            | object     | End of the URL string of the location of the repository on GitHub. The GitHub user followed by the name of the repository.                                                                               |
 | language        | object     | The programming language in which the code is written. Our top four most frequently used languages are Jupyter Notebook, PHP, JavaScript, and Python.                                                    |
-| readme_contents | object     | The contents of the READme file of the repostory.                                                                                                                                                        |
-| clean           | object     | The contents of the READme file of the repository after a bsic cleaning. All characters are loewr case, unicode data is normalize and encoded as ASCII, and all non-alphanumeric characters are removed. |
-| stemmed         | object     | The contents of the cleaned READme file stemmed by word.                                                                                                                                                 |
-| lemmatized      | object     | The contents of the cleaned READme file lemmatized                                                                                                                                                       |
+| readme_contents | object     | The contents of the README file of the repository.                                                                                                                                                        |
+| clean           | object     | The contents of the README file of the repository after a bsic cleaning. All characters are lower case, unicode data is normalize and encoded as ASCII, and all non-alphanumeric characters are removed. |
+| stemmed         | object     | The contents of the cleaned README file stemmed by word.                                                                                                                                                 |
+| lemmatized      | object     | The contents of the cleaned README file lemmatized                                                                                                                                                       |
 
 
 ### V. Process
@@ -223,12 +226,11 @@ To reproduce our project:
 
 - Download and import the 'acquire.py', 'explore.py', 'prepare.py', 'model.py' and 'Final_Notebook.ipynb' files in our repository.
 
-- Import all the other libraries listed in the 'Import Libraries' section. 
+- Import all the other libraries listed in the 'Import Libraries' section of the notebook. 
 
 - Run the 'Final_Notebook.ipynb' file.
 
 When using any function housed in the created modules above, ensure full reading of comments and docstrings to understand its proper use and passed arguments or parameters.
-
 
 [[Return to Top]](#Using-Natural-Language-Processing-to-Predict-Programming-Languange)
 
