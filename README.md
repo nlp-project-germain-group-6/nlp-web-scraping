@@ -243,6 +243,5 @@ To reproduce our project:
 
 When using any function housed in the created modules above, ensure full reading of comments and docstrings to understand its proper use and passed arguments or parameters.
 
-
 [[Return to Top]](#Using-Natural-Language-Processing-to-Predict-Programming-Languange)
 
