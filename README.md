@@ -127,11 +127,7 @@ What does the distribution of IDFs look like for the most common words?
 
 #### Our best performing model predicted the test dataset languages with 64% accuracy, outperforming baseline by 28% on the test dataset.
 
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> dffb8dc5cb76e2a3bd4df2dad1e2f9e201830466
 ### IV. Data Context
 ---
 
