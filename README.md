@@ -128,21 +128,20 @@ What does the distribution of IDFs look like for the most common words?
 
 #### Our best performing model predicted the test dataset languages with 64% accuracy, outperforming baseline by 28% on the test dataset.
 
-      ================ Random Forest Lemmatized =====================
-      RandomForestClassifer()
-      ------------- Test Scores ----------------- 
-
+                   ============== Random Forest Lemmatized ================           
+RandomForestClassifier()
+~~~~~~~~Test Scores~~~~~~~~~
                   precision    recall  f1-score   support
 
       JavaScript       0.67      0.40      0.50         5
-Jupyter Notebook       0.75      0.90      0.82        10     
+Jupyter Notebook       0.75      0.90      0.82        10
              PHP       0.67      1.00      0.80         8
           Python       0.00      0.00      0.00         5
 
         accuracy                           0.68        28
        macro avg       0.52      0.57      0.53        28
     weighted avg       0.58      0.68      0.61        28
-
+    
 ### IV. Data Context
 ---
 
